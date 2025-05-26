@@ -1,5 +1,5 @@
-import 'package:aaaaa/anotacoes.dart';
-import 'package:aaaaa/arquivos.dart';
+import 'package:aulagps3/anotacoes.dart';
+import 'package:aulagps3/arquivos.dart';
 import 'package:flutter/material.dart';
 
 
@@ -193,6 +193,19 @@ class _DetalhesConcursoState extends State<DetalhesConcurso> {
 
             const SizedBox(height: 20),
 
+            ElevatedButton.icon(
+              onPressed: () {
+
+              },
+              icon: const Icon(Icons.delete, color: Colors.white),
+              label: const Text('Salvar', style: TextStyle(color: Colors.white)),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.green[800],
+                minimumSize: const Size(double.infinity, 50),
+              ),
+            ),
+
+            const SizedBox(height: 20),
 
             ElevatedButton.icon(
               onPressed: () {
@@ -205,6 +218,10 @@ class _DetalhesConcursoState extends State<DetalhesConcurso> {
                 minimumSize: const Size(double.infinity, 50),
               ),
             ),
+
+
+
+
           ],
         ),
       ),

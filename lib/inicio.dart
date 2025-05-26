@@ -42,7 +42,7 @@ class PaginaPrincipal extends StatelessWidget {
                     ),
                     child: TextButton(
                       onPressed: () {
-
+                        Navigator.push(context, MaterialPageRoute(builder: (_) => const DetalhesConcurso()));
                       },
                       child: const Text(
                         'Botão 1',
