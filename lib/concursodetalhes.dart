@@ -1,6 +1,8 @@
 import 'package:aaaaa/anotacoes.dart';
 import 'package:aaaaa/arquivos.dart';
 import 'package:flutter/material.dart';
+import 'package:aaaaa/concursodatabase.dart';
+import 'package:aaaaa/concurso.dart';
 
 class DetalhesConcurso extends StatefulWidget {
   const DetalhesConcurso({super.key});
@@ -35,7 +37,7 @@ class _DetalhesConcursoState extends State<DetalhesConcurso> {
     }
   }
 
-  // --- Validação de campos obrigatórios ---
+
   bool _camposValidos() {
     return _nomeController.text.isNotEmpty &&
         _localController.text.isNotEmpty &&
@@ -44,7 +46,7 @@ class _DetalhesConcursoState extends State<DetalhesConcurso> {
   }
 
 
-  void _salvarConcurso() {
+  void _salvarConcurso() async {
     if (!_camposValidos()) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
@@ -55,14 +57,26 @@ class _DetalhesConcursoState extends State<DetalhesConcurso> {
       return;
     }
 
-    // Lógica para salvar os dados (ex.: banco de dados/API)
+    final novoConcurso = Concurso(
+      nome: _nomeController.text,
+      local: _localController.text,
+      dataInscricao: _dataInscricao!,
+      dataRealizacao: _dataRealizacao!,
+      pagamentoEfetuado: _pagamentoEfetuado,
+    );
+
+    await ConcursoDatabase.instance.inserirConcurso(novoConcurso);
+
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(
         content: Text('Concurso salvo com sucesso!'),
         backgroundColor: Colors.green,
       ),
     );
+
+    Navigator.pop(context);
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -98,7 +112,7 @@ class _DetalhesConcursoState extends State<DetalhesConcurso> {
           IconButton(
             icon: const Icon(Icons.info_outline, color: Colors.white),
             onPressed: () {
-              // Ação adicional se necessário
+
             },
           ),
         ],
@@ -107,7 +121,7 @@ class _DetalhesConcursoState extends State<DetalhesConcurso> {
             bottom: Radius.circular(15),
           ),
         ),
-        toolbarHeight: 80, // Altura aumentada
+        toolbarHeight: 80,
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
@@ -258,7 +272,7 @@ class _DetalhesConcursoState extends State<DetalhesConcurso> {
             const SizedBox(height: 20),
             ElevatedButton.icon(
               onPressed: () {
-                // Adicione confirmação antes de excluir
+
               },
               icon: const Icon(Icons.delete, color: Colors.white),
               label: const Text('Excluir Concurso', style: TextStyle(color: Colors.white)),

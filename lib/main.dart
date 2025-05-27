@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'inicio.dart';
-import 'package:aaaaa/concursodatabase.dart'
+import 'package:aaaaa/concursodatabase.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await concursodatabase().database;
+  await ConcursoDatabase.instance.database;
 
   runApp(const MinhaWidget());
 }
@@ -13,8 +14,10 @@ class MinhaWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
-      home: PaginaPrincipal(),
+    return MaterialApp(
+      title: 'Lista de Concursos',
+      theme: ThemeData(primarySwatch: Colors.blue),
+      home: const PaginaPrincipal(),
     );
   }
 }
