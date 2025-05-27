@@ -11,7 +11,20 @@
     return Scaffold(
     backgroundColor: Colors.black,
     appBar: AppBar(
-    backgroundColor: Colors.black,
+        backgroundColor: Colors.grey[900],
+        flexibleSpace: Container(
+            decoration: BoxDecoration(
+                gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: [Colors.grey[850]!, Colors.grey[900]!],
+                ),
+            ),
+        ),
+        leading: IconButton(
+            icon: const Icon(Icons.arrow_back, color: Colors.white, size: 30),
+            onPressed: () => Navigator.pop(context),
+        ),
     centerTitle: true,
     title: const Text(
     'Arquivos anexados',

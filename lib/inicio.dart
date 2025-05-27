@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'concurso.dart';
+import 'concursodetalhes.dart';
 
 class PaginaPrincipal extends StatelessWidget {
   const PaginaPrincipal({super.key});

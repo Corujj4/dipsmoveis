@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'inicio.dart';
-void main() {
+import 'package:aaaaa/concursodatabase.dart'
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await concursodatabase().database;
+
   runApp(const MinhaWidget());
 }
 
@@ -11,7 +15,6 @@ class MinhaWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return  MaterialApp(
       home: PaginaPrincipal(),
-      );
+    );
   }
 }
-
