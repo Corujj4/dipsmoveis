@@ -1,8 +1,8 @@
-import 'package:aaaaa/anotacoes.dart';
-import 'package:aaaaa/arquivos.dart';
+import 'package:aaaaa/screens//anotacoes.dart';
+import 'package:aaaaa/screens/arquivos.dart';
 import 'package:flutter/material.dart';
 import 'package:aaaaa/concursodatabase.dart';
-import 'package:aaaaa/concurso.dart';
+import 'package:aaaaa/models/concurso.dart';
 
 class DetalhesConcurso extends StatefulWidget {
   const DetalhesConcurso({super.key});

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'concursodetalhes.dart';
-import 'concursodatabase.dart';
-import 'package:aaaaa/concurso.dart';
+import 'package:aaaaa/concursodatabase.dart';
+import 'package:aaaaa/models/concurso.dart';
 
 class PaginaPrincipal extends StatefulWidget {
   const PaginaPrincipal({super.key});
@@ -91,6 +91,8 @@ class _PaginaPrincipalState extends State<PaginaPrincipal> {
                         color: concurso.pagamentoEfetuado ? Colors.green : Colors.red,
                       ),
                       onTap: () {
+
+
 
                       },
                     ),

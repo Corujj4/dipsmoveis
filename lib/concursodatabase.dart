@@ -1,6 +1,6 @@
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
-import 'package:aaaaa/concurso.dart';
+import 'package:aaaaa/models/concurso.dart';
 
 class ConcursoDatabase {
   static final ConcursoDatabase instance = ConcursoDatabase._init();
