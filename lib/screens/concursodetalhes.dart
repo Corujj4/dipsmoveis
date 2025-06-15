@@ -216,13 +216,6 @@ class _DetalhesConcursoState extends State<DetalhesConcurso> {
                       builder: (_) => TelaAnotacoes(concursoId: widget.concurso!.id!),
                     ),
                   );
-                } else {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                      content: Text('Salve o concurso antes de adicionar anotações.'),
-                      backgroundColor: Colors.red,
-                    ),
-                  );
                 }
               },
               icon: const Icon(Icons.edit, color: Colors.white),
