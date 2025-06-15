@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'concursodetalhes.dart';
+import 'package:aaaaa/screens/concursodetalhes.dart';
 import 'package:aaaaa/concursodatabase.dart';
 import 'package:aaaaa/models/concurso.dart';
 
@@ -90,10 +90,14 @@ class _PaginaPrincipalState extends State<PaginaPrincipal> {
                         concurso.pagamentoEfetuado ? Icons.check_circle : Icons.cancel,
                         color: concurso.pagamentoEfetuado ? Colors.green : Colors.red,
                       ),
-                      onTap: () {
-
-
-
+                      onTap: () async {
+                        await Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => DetalhesConcurso(concurso: concurso),
+                          ),
+                        );
+                        _refresh();
                       },
                     ),
                   ),
@@ -106,7 +110,6 @@ class _PaginaPrincipalState extends State<PaginaPrincipal> {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.orange,
         onPressed: () async {
-
           await Navigator.push(
             context,
             MaterialPageRoute(builder: (_) => const DetalhesConcurso()),

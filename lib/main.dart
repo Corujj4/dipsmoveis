@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:aaaaa/screens/inicio.dart';
+import 'screens/inicio.dart';
 import 'package:aaaaa/concursodatabase.dart';
 
 void main() async {
