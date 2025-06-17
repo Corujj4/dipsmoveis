@@ -1,3 +1,4 @@
+import 'package:aaaaa/services/image_picker_widget.dart';
 import 'package:flutter/material.dart';
 import 'screens/inicio.dart';
 import 'package:aaaaa/concursodatabase.dart';
@@ -17,7 +18,7 @@ class MinhaWidget extends StatelessWidget {
     return MaterialApp(
       title: 'Lista de Concursos',
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: const PaginaPrincipal(),
+      home: ImagePickerWidget(),
     );
   }
 }
